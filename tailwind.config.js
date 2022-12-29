@@ -14,7 +14,7 @@ module.exports = {
             'black-primary': "#383838"
         },
         backgroundImage: {
-            'hero-image': "url('/img/hero-cover.png')",
+            'hero-image': "url('/img/hero-cover.webp')",
         },
         transformOrigin: {
             'zero': '0 0',

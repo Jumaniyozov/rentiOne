@@ -3,15 +3,17 @@ import {YoutubeLogo} from "./assets/YoutubeLogo";
 import {TelegramLogo} from "./assets/TelegramLogo";
 import {FacebookLogo} from "./assets/FacebookLogo";
 import {BtnLogo} from "./assets/BtnLogo";
+import Image from "next/image";
 
-export const Hero = () => {
+export const Hero = (props: { id: string }) => {
     return (
-        <section id="hero" className="snap-start bg-primary h-screen max-w-screen-2xl w-full">
+        <section id={props.id} className="snap-start bg-primary h-screen max-w-screen-2xl w-full">
             <div className="px-40 pt-16 h-full flex w-full">
                 <div className="flex-1 flex">
                     <div className="h-full flex flex-col basis-1/3 gap-4">
                         <div className="basis-2/5 relative flex justify-start items-end">
-                            <p className="[writing-mode:vertical-lr] ml-1  rotate-180 opacity-50 cursor-default">We are in social networks</p>
+                            <p className="[writing-mode:vertical-lr] ml-1  rotate-180 opacity-50 cursor-default">We are
+                                in social networks</p>
                         </div>
                         <div className="basis-3/5 flex flex-col">
                             <div className="basis-3/6 ">
@@ -51,14 +53,26 @@ export const Hero = () => {
                     </div>
                 </div>
                 <div className="flex-1 relative flex flex-col">
-                    <div className="bg-hero-image bg-center bg-contain bg-no-repeat h-full basis-10/12 flex flex-col gap-3">
-                        <div className="flex items-start justify-end">
-                            <p className="[writing-mode:vertical-lr] rotate-180 opacity-50 cursor-default">Interview
-                                with Forbes</p>
+                    <div className="basis-10/12 flex flex-col gap-3 relative">
+                        <div className="h-full relative">
+                            <Image
+                                className="object-contain"
+                                src="/img/hero-cover.webp"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                alt="Hero cover image of building"
+                                fill priority/>
                         </div>
-                        <div className="basis-4/12 flex items-start justify-end">
-                            <div className="pr-2 h-2/4">
-                                <div className="bg-black-primary opacity-25 h-full w-[0.1rem]"></div>
+                        <div className="absolute flex align-start justify-end w-full h-full gap-3">
+                            <div className="flex flex-col w-1/12 content-center h-full gap-4">
+                                <div className="h-fit w-full flex justify-center items-start">
+                                    <p className="[writing-mode:vertical-lr] rotate-180 opacity-50 cursor-default">Interview
+                                        with Forbes</p>
+                                </div>
+                                <div className="h-1/2 w-full flex justify-center items-start">
+                                    <div className="h-2/4">
+                                        <div className="bg-black-primary opacity-25 h-full w-[0.1rem]"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
